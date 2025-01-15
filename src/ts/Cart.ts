@@ -2,7 +2,7 @@ interface Buyable {
     id: number;
     name: string;
     price: number;
-    isUnique: boolean; // Флаг уникальности товара
+    isUnique: boolean;
 }
 
 class Cart {
@@ -37,7 +37,7 @@ class Cart {
             throw new Error(`Cannot decrease quantity of unique item.`);
         }
         if (existing.quantity <= amount) {
-            this._items.delete(id); // Удалить товар, если его количество станет меньше или равно 0
+            this._items.delete(id);
         } else {
             existing.quantity -= amount;
         }
